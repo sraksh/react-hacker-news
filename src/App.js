@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import logo from './logo.svg';
 // import './App.css';
 
@@ -10,9 +10,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={() => alert('Start finding events')}>
-        Find Events
-      </button>
+        <button onClick={() => alert("Start finding events")}>
+          Find Events
+        </button>
       </header>
     </div>
   );

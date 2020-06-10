@@ -1,13 +1,12 @@
 import express from "express";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import AppComponent from "../src/App";
+import { generatedHTML } from "./renderer";
 
 const app = express();
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  const content = renderToString(<AppComponent />);
-  res.send(content);
+  res.send(generatedHTML());
 });
 
 app.listen(4000, () => {
