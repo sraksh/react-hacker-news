@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import './index.css';
-import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.hydrate(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
