@@ -6,6 +6,7 @@ export default () => {
   return (
     <Switch>
       <Route exact path="/" component={AppComponent} />
+      <Route path="/newest" component={()=> 'Test Route Works'} />
     </Switch>
   );
 };

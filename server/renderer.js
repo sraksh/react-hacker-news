@@ -13,8 +13,8 @@ function getContent(path) {
   return content;
 }
 
-function generatedHTML() {
-  const content = getContent();
+function generatedHTML(path) {
+  const content = getContent(path);
   return `
     <html>
       <head>
