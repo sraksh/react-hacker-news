@@ -1,6 +1,6 @@
 import express from "express";
 import { generatedHTML } from "./renderer";
-
+// import serverCreateStore from './store';
 const app = express();
 
 app.use(express.static("public"));
