@@ -1,16 +1,30 @@
 import React from "react";
+import { connect } from "react-redux";
+import { fetchNewsList } from "../../actions/index";
 
 class Home extends React.Component {
-  constructor() {
-    super();
+  componentDidMount() {
+    this.props.fetchNewsList();
   }
   render() {
+    const { hits } = this.props.newsList.newsList;
     return (
-      <React.Fragment>
+      <div>
         <div>Home Template</div>
-      </React.Fragment>
+        <ul>
+          {hits && hits.map(item => <li key={item.id}>{item.author}</li>)}
+        </ul>
+      </div>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+  newsList: state.newsList,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchNewsList: () => dispatch(fetchNewsList()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
