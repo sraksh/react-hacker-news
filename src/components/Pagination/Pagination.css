@@ -20,3 +20,20 @@
   text-decoration: none;
   border-left: 3px solid #ff6600;
 }
+.btn-disabled-left {
+  font-size: 0.8rem;
+  color: grey;
+  font-weight: bold;
+  margin-right: 0.5em;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+.btn-disabled-right {
+  font-size: 0.8rem;
+  color: grey;
+  font-weight: bold;
+  padding-left: 0.5em;
+  text-decoration: none;
+  cursor: not-allowed;
+  border-left: 3px solid grey;
+}

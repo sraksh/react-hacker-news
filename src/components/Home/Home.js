@@ -16,7 +16,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNewsList();
+    this.props.fetchNewsList(this.props.currentPage.currentPage);
   }
 
   upVoteCount(item) {
@@ -124,10 +124,11 @@ class Home extends React.Component {
 
 const mapStateToProps = state => ({
   newsList: state.newsList,
+  currentPage: state.currentPage,
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchNewsList: () => dispatch(fetchNewsList()),
+  fetchNewsList: pageNum => dispatch(fetchNewsList(pageNum)),
   updateVoteCount: item => dispatch(updateVoteCount(item)),
   hideNewsItem: objectID => dispatch(hideNewsItem(objectID)),
 });

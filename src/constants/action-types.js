@@ -1,3 +1,5 @@
 export const FETCH_NEWSLIST = "FETCH_NEWSLIST";
 export const UPDATE_UPVOTE_COUNT = "UPDATE_UPVOTE_COUNT";
 export const HIDE_NEWS_ITEM = "HIDE_NEWS_ITEM";
+export const PREVIOUS_PAGE = "PREVIOUS_PAGE";
+export const NEXT_PAGE = "NEXT_PAGE";

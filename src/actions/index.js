@@ -2,16 +2,18 @@ import {
   FETCH_NEWSLIST,
   UPDATE_UPVOTE_COUNT,
   HIDE_NEWS_ITEM,
+  PREVIOUS_PAGE,
+  NEXT_PAGE,
 } from "../constants/action-types";
-const URL = "http://hn.algolia.com/api/v1/search?hitsPerPage=30&page=1";
+const URL = "http://hn.algolia.com/api/v1/search?hitsPerPage=30&page=";
 
 export const populateNews = response => ({
   type: FETCH_NEWSLIST,
   payload: response,
 });
 
-export const fetchNewsList = () => dispatch => {
-  fetch(URL)
+export const fetchNewsList = pageNum => dispatch => {
+  fetch(URL + pageNum)
     .then(response => response.json())
     .then(res => {
       saveDataToLocalStorage(res.hits);
@@ -36,6 +38,16 @@ export const dispatchHideNews = newsId => ({
   payload: newsId,
 });
 
+export const goToPrevious = page => ({
+  type: PREVIOUS_PAGE,
+  payload: page,
+});
+
+export const goToNext = page => ({
+  type: NEXT_PAGE,
+  payload: page,
+});
+
 function getDataFromLocalStorage(response) {
   var hitsArray = [];
   for (var item of response) {
@@ -45,6 +57,7 @@ function getDataFromLocalStorage(response) {
 }
 
 function saveDataToLocalStorage(response) {
+  localStorage.clear();
   for (var item of response) {
     var lastestVotes = localStorage.getItem(item.objectID)
       ? JSON.parse(localStorage.getItem(item.objectID)).points
