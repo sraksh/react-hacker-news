@@ -18,10 +18,18 @@ function getContent(path, store) {
 }
 
 function generatedHTML(path, store) {
+  const title = "React Hacker News";
+  const description =
+    "A hacker news clone using React with Server Side Rendering";
   const content = getContent(path, store);
   return `
     <html>
       <head>
+      <meta charset="utf-8">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1" name="viewport">
+      <title>${title}</title>
+      <meta name="description" content="${description}">
       </head>
       <body>
         <div id="root">

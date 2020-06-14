@@ -1,4 +1,5 @@
 const path = require("path");
+const webpackNodeExternals = require("webpack-node-externals");
 
 module.exports = {
   target: "node", // Server side. Not for client browser
@@ -12,11 +13,16 @@ module.exports = {
       {
         test: /\.js?$/,
         loader: "babel-loader",
-        exclude: /node_modules/,
+        exclude: "/node_modules/",
         options: {
           presets: ["@babel/react", "@babel/env"],
         },
       },
+      {
+        test: /\.css$/,
+        loader: ["css-loader"],
+      },
     ],
   },
+  externals: [webpackNodeExternals()],
 };
