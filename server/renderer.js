@@ -23,7 +23,7 @@ function generatedHTML(path, store) {
     "A hacker news clone using React with Server Side Rendering";
   const content = getContent(path, store);
   return `
-    <html>
+    <html lang="en">
       <head>
       <meta charset="utf-8">
       <meta content="IE=edge" http-equiv="X-UA-Compatible">

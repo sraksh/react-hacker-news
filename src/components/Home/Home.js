@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import "./Home.css";
 import VoteChart from "../VoteChart/VoteChart";
+import Pagination from "../Pagination/Pagination";
 import {
   fetchNewsList,
   updateVoteCount,
@@ -56,6 +57,7 @@ class Home extends React.Component {
           <a href="#" target="_self">
             <img
               src="https://news.ycombinator.com/grayarrow2x.gif"
+              alt="Upvote button"
               onClick={this.upVoteCount.bind(this, item)}
               className="upvote-icon"
             />
@@ -97,7 +99,7 @@ class Home extends React.Component {
     const { hits } = this.props.newsList.newsList;
     return (
       <div className="news-container">
-        <div>NEWS FEED</div>
+        <h2>NEWS FEED</h2>
         <div>
           <table cellPadding="0" cellSpacing="0" width="100%" border="0">
             <thead className="news-header">
@@ -112,6 +114,7 @@ class Home extends React.Component {
               {hits && hits.map(item => !item.hide && this.renderItem(item))}
             </tbody>
           </table>
+          <Pagination></Pagination>
           <VoteChart hits={hits}></VoteChart>
         </div>
       </div>
