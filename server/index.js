@@ -10,6 +10,8 @@ app.get("*", (req, res) => {
   res.send(generatedHTML(path, serverCreateStore));
 });
 
-app.listen(4000, () => {
+var port = process.env.PORT || 4000
+
+app.listen(port, () => {
   console.log("Listening to Port 4000");
 });
