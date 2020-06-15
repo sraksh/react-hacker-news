@@ -26,6 +26,7 @@ function generatedHTML(path, store) {
     <html lang="en">
       <head>
       <meta charset="utf-8">
+      <link rel="icon" href="https://news.ycombinator.com/favicon.ico" />
       <meta content="IE=edge" http-equiv="X-UA-Compatible">
       <meta content="width=device-width, initial-scale=1" name="viewport">
       <title>${title}</title>
