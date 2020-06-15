@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- "stable"
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - npm run build
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 95f499a3-9265-4959-91fa-0a1b337fb0d7
+  app: 
+    master: react-hacker-news
