@@ -2,12 +2,17 @@ body {
   margin: 0;
   font-family: Verdana, Geneva, sans-serif;
 }
+#root {
+  padding: 0 4vw;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .news-container {
   margin: 0 auto;
-  width: 70%;
-}
-.news-container tr {
-  height: 25px;
+  max-width: 1040px;
+  width: 100%;
 }
 .news-header {
   background-color: #ff6600;
@@ -29,10 +34,11 @@ body {
 
 .thead-column-width {
   width: 7em;
+  padding: 0.5em;
 }
 
 .td-column-item {
-  padding: 0.225em;
+  padding: 0.8em;
   text-align: center;
 }
 

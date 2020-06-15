@@ -12,26 +12,10 @@ export const populateNews = response => ({
   payload: response,
 });
 
-export const fetchNewsList = pageNum => dispatch => {
-  fetch(URL + pageNum)
-    .then(response => response.json())
-    .then(res => {
-      saveDataToLocalStorage(res.hits);
-      var updatedNewsData = getDataFromLocalStorage(res.hits);
-      return dispatch(populateNews({ ...res, hits: updatedNewsData }));
-    });
-};
-
 export const updateVoteCount = newsItem => ({
   type: UPDATE_UPVOTE_COUNT,
   payload: newsItem,
 });
-
-export const hideNewsItem = newsId => dispatch => {
-  var newsItemObj = JSON.parse(localStorage.getItem(newsId));
-  localStorage.setItem(newsId, JSON.stringify({ ...newsItemObj, hide: true }));
-  dispatch(dispatchHideNews(newsId));
-};
 
 export const dispatchHideNews = newsId => ({
   type: HIDE_NEWS_ITEM,
@@ -47,6 +31,22 @@ export const goToNext = page => ({
   type: NEXT_PAGE,
   payload: page,
 });
+
+export const fetchNewsList = pageNum => dispatch => {
+  fetch(URL + pageNum)
+    .then(response => response.json())
+    .then(res => {
+      saveDataToLocalStorage(res.hits);
+      var updatedNewsData = getDataFromLocalStorage(res.hits);
+      return dispatch(populateNews({ ...res, hits: updatedNewsData }));
+    });
+};
+
+export const hideNewsItem = newsId => dispatch => {
+  var newsItemObj = JSON.parse(localStorage.getItem(newsId));
+  localStorage.setItem(newsId, JSON.stringify({ ...newsItemObj, hide: true }));
+  dispatch(dispatchHideNews(newsId));
+};
 
 function getDataFromLocalStorage(response) {
   var hitsArray = [];

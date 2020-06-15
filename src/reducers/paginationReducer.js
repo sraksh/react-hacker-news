@@ -6,7 +6,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case NEXT_PAGE:
-      if (action.payload < 34) {
+      if (action.payload < 33) {
         return {
           ...state,
           currentPage: state.currentPage + 1,

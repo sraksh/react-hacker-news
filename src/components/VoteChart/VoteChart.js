@@ -22,8 +22,8 @@ class VoteChart extends React.Component {
           label: "VOTES",
           fill: false,
           lineTension: 0.5,
-          backgroundColor: "rgba(75,192,192,1)",
-          borderColor: "rgba(0,0,0,1)",
+          backgroundColor: "rgb(0, 0, 153)",
+          borderColor: "rgb(56, 105, 250)",
           borderWidth: 2,
           data: voteCountData,
         },
@@ -38,10 +38,13 @@ class VoteChart extends React.Component {
               display: true,
             },
             legend: {
-              display: false,
+              display: true,
+              fontWeight: "bold",
+              position: "left",
             },
           }}
         />
+        <p className="id-label">ID</p>
       </div>
     );
   }

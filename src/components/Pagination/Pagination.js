@@ -5,7 +5,7 @@ import { fetchNewsList, goToPrevious, goToNext } from "../../actions/index";
 import "./Pagination.css";
 
 class Pagination extends React.Component {
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const newValue = nextProps.currentPage.currentPage;
     if (newValue !== this.props.currentPage.currentPage) {
       this.props.fetchNewsList(newValue);

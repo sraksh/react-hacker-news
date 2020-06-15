@@ -3,6 +3,8 @@
   padding-bottom: 10px;
   display: flex;
   align-items: center;
+  width: 100%;
+  justify-content: flex-end;
   border-bottom: 5px solid #ff6600;
 }
 .btn-prev {
