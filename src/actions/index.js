@@ -5,7 +5,7 @@ import {
   PREVIOUS_PAGE,
   NEXT_PAGE,
 } from "../constants/action-types";
-const URL = "http://hn.algolia.com/api/v1/search?hitsPerPage=30&page=";
+const URL = "https://hn.algolia.com/api/v1/search?hitsPerPage=30&page=";
 
 export const populateNews = response => ({
   type: FETCH_NEWSLIST,
