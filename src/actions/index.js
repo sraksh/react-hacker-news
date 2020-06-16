@@ -57,14 +57,13 @@ function getDataFromLocalStorage(response) {
 }
 
 function saveDataToLocalStorage(response) {
-  localStorage.clear();
   for (var item of response) {
     var lastestVotes = localStorage.getItem(item.objectID)
       ? JSON.parse(localStorage.getItem(item.objectID)).points
       : item.points;
     var hideStatus = localStorage.getItem(item.objectID)
       ? JSON.parse(localStorage.getItem(item.objectID)).hide
-      : item.hide;
+      : false;
     localStorage.setItem(
       item.objectID,
       JSON.stringify({ ...item, hide: hideStatus, points: lastestVotes })

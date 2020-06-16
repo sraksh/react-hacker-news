@@ -11,10 +11,12 @@ class Pagination extends React.Component {
       this.props.fetchNewsList(newValue);
     }
   }
-  previousPage() {
+  previousPage(event) {
+    event.preventDefault();
     this.props.goToPrevious(this.props.currentPage.currentPage);
   }
-  nextPage() {
+  nextPage(event) {
+    event.preventDefault();
     this.props.goToNext(this.props.currentPage.currentPage);
   }
   render() {
@@ -23,14 +25,22 @@ class Pagination extends React.Component {
         <a
           href="#"
           target="_self"
-          className={this.props.currentPage.currentPage !== 0 ? "btn-prev" : "btn-disabled-left"}
+          className={
+            this.props.currentPage.currentPage !== 0
+              ? "btn-prev"
+              : "btn-disabled-left"
+          }
           onClick={this.previousPage.bind(this)}>
           Previous
         </a>
         <a
           href="#"
           target="_self"
-          className={this.props.currentPage.currentPage !== 34 ? "btn-next" : "btn-disabled-right"}
+          className={
+            this.props.currentPage.currentPage !== 34
+              ? "btn-next"
+              : "btn-disabled-right"
+          }
           onClick={this.nextPage.bind(this)}>
           Next
         </a>

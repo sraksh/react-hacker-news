@@ -4,7 +4,6 @@
   transform: rotate(-90deg);
 }
 .id-label {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   text-align: center;
 }

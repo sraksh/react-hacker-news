@@ -19,8 +19,9 @@ class Home extends React.Component {
     this.props.fetchNewsList(this.props.currentPage.currentPage);
   }
 
-  upVoteCount(item) {
+  upVoteCount(item, event) {
     // update call goes here
+    event.preventDefault();
     this.props.updateVoteCount(item);
     localStorage.setItem(
       item.objectID,
@@ -28,7 +29,8 @@ class Home extends React.Component {
     );
   }
 
-  hideNewsItem(item) {
+  hideNewsItem(item, event) {
+    event.preventDefault();
     this.props.hideNewsItem(item.objectID);
   }
 
@@ -82,22 +84,26 @@ class Home extends React.Component {
               target="_blank">
               ({this.getHostname(item.url)})
             </a>
-            <span className="grey-text margin-l-1 text-no-decor">by</span>
-            <span className="grey-text margin-l-1 text-no-decor text-black">
-              {item.author}
+            <span className="mobile-hide-wrapper">
+              <span className="grey-text margin-l-1 text-no-decor">by</span>
+              <span className="grey-text margin-l-1 text-no-decor text-black">
+                {item.author}
+              </span>
             </span>
             <span className="grey-text margin-l-1 text-no-decor">
               {this.getFormattedTime(item.created_at_i)}
             </span>
-            <span className="grey-text margin-l-1 text-no-decor">[</span>
-            <a
-              href="#"
-              target="_self"
-              className="grey-text margin-l-1 text-no-decor text-black"
-              onClick={this.hideNewsItem.bind(this, item, event)}>
-              Hide
-            </a>
-            <span className="grey-text margin-l-1 text-no-decor">]</span>
+            <span className="mobile-hide-wrapper">
+              <span className="grey-text margin-l-1 text-no-decor">[</span>
+              <a
+                href="#"
+                target="_self"
+                className="grey-text margin-l-1 text-no-decor text-black"
+                onClick={this.hideNewsItem.bind(this, item)}>
+                Hide
+              </a>
+              <span className="grey-text margin-l-1 text-no-decor">]</span>
+            </span>
           </div>
         </td>
       </tr>

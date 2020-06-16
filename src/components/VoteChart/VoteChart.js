@@ -39,8 +39,11 @@ class VoteChart extends React.Component {
             },
             legend: {
               display: true,
-              fontWeight: "bold",
               position: "left",
+              labels: {
+                boxWidth: 20,
+                usePointStyle: true,
+              },
             },
           }}
         />

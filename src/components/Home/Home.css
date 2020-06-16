@@ -75,3 +75,62 @@ table {
 .font-size-l {
   font-size: 1rem;
 }
+
+@media only screen and (max-width: 760px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 8px;
+  }
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 40%;
+    padding: 1.7% 1.7% 1.7% 40%;
+  }
+  /* Now like a table header */
+  td:before {
+    position: absolute;
+    left: 30px;
+    width: 20%;
+    padding-right: 30px;
+    white-space: nowrap;
+  }
+  /* Label the data */
+  td:nth-of-type(1):before {
+    content: "Comments";
+  }
+  td:nth-of-type(2):before {
+    content: "Vote Count";
+  }
+  td:nth-of-type(3):before {
+    content: "Upvote";
+  }
+  td:nth-of-type(4):before {
+    content: "News Details";
+    text-align: center;
+  }
+  span {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .mobile-hide-wrapper {
+    display: block;
+    margin-left: 24px;
+  }
+}
