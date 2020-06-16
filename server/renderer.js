@@ -2,14 +2,14 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-
+import { renderRoutes } from "react-router-config";
 import Routes from "./../src/routes";
 
 function getContent(path, store) {
   const routeContent = (
     <Provider store={store}>
       <StaticRouter location={path} context={{}}>
-        <Routes />
+        {renderRoutes(Routes)}
       </StaticRouter>
     </Provider>
   );
