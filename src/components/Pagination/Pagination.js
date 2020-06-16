@@ -25,6 +25,7 @@ class Pagination extends React.Component {
         <a
           href="#"
           target="_self"
+          rel="noopener"
           className={
             this.props.currentPage.currentPage !== 0
               ? "btn-prev"
@@ -36,6 +37,7 @@ class Pagination extends React.Component {
         <a
           href="#"
           target="_self"
+          rel="noopener"
           className={
             this.props.currentPage.currentPage !== 34
               ? "btn-next"

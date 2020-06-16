@@ -63,7 +63,7 @@ class Home extends React.Component {
           {item.points}
         </td>
         <td className="td-column-item font-size-m" data-label="UpVote">
-          <a href="#" target="_self" className="font-size-l">
+          <a href="#" target="_self" rel="noopener" className="font-size-l">
             <img
               src="https://news.ycombinator.com/grayarrow2x.gif"
               alt="Upvote button"
@@ -80,6 +80,7 @@ class Home extends React.Component {
             </span>
             <a
               href={item.url ? item.url : "#"}
+              rel="noopener"
               className="grey-text margin-l-1 text-no-decor"
               target="_blank">
               ({this.getHostname(item.url)})
@@ -114,7 +115,7 @@ class Home extends React.Component {
     const { hits } = this.props.newsList.newsList;
     return (
       <div className="news-container">
-        <h2>NEWS FEED</h2>
+        <h1>NEWS FEED</h1>
         <div>
           <table cellPadding="0" cellSpacing="0" width="100%" border="0">
             <thead className="news-header">

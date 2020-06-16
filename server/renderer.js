@@ -23,22 +23,23 @@ function generatedHTML(path, store) {
     "A hacker news clone using React with Server Side Rendering";
   const content = getContent(path, store);
   return `
-    <html lang="en">
-      <head>
-      <meta charset="utf-8">
-      <link rel="icon" href="https://news.ycombinator.com/favicon.ico" />
-      <meta content="IE=edge" http-equiv="X-UA-Compatible">
-      <meta content="width=device-width, initial-scale=1" name="viewport">
-      <title>${title}</title>
-      <meta name="description" content="${description}">
-      </head>
-      <body>
-        <div id="root">
-            ${content}
-            <script src="c-bundle.js"></script>
-        </div>   
-      </body>
-    </html>`;
+    <!DOCTYPE html>
+      <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="https://news.ycombinator.com/favicon.ico" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>${title}</title>
+        <meta name="description" content="${description}">
+        </head>
+        <body>
+          <div id="root">
+              ${content}
+              <script src="c-bundle.js"></script>
+          </div>   
+        </body>
+      </html>`;
 }
 
 export { generatedHTML };

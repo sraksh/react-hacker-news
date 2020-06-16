@@ -11,6 +11,7 @@ Object {
         <a
           class="btn-prev"
           href="#"
+          rel="noopener"
           target="_self"
         >
           Previous
@@ -18,6 +19,7 @@ Object {
         <a
           class="btn-next"
           href="#"
+          rel="noopener"
           target="_self"
         >
           Next
@@ -32,6 +34,7 @@ Object {
       <a
         class="btn-prev"
         href="#"
+        rel="noopener"
         target="_self"
       >
         Previous
@@ -39,6 +42,7 @@ Object {
       <a
         class="btn-next"
         href="#"
+        rel="noopener"
         target="_self"
       >
         Next
