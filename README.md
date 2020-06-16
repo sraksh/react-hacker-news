@@ -1,7 +1,7 @@
 # SSR React App
 
-<p align="center"><img src="https://i.ibb.co/GdRf4rL/Screen-Shot-2020-06-16-at-1-24-49-PM.png"></p>
-<p align="center"><img src="https://i.ibb.co/Dt6FNQD/Screen-Shot-2020-06-16-at-1-19-47-PM.png"></p>
+<p align="center"><img height="450"  width="450" src="https://i.ibb.co/GdRf4rL/Screen-Shot-2020-06-16-at-1-24-49-PM.png"></p>
+<p align="center"><img height="200"  width="450" src="https://i.ibb.co/Dt6FNQD/Screen-Shot-2020-06-16-at-1-19-47-PM.png"></p>
 
 ## Overview
 
