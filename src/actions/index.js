@@ -32,14 +32,11 @@ export const goToNext = page => ({
   payload: page,
 });
 
-export const fetchNewsList = pageNum => dispatch => {
-  fetch(URL + pageNum)
-    .then(response => response.json())
-    .then(res => {
-      saveDataToLocalStorage(res.hits);
-      var updatedNewsData = getDataFromLocalStorage(res.hits);
-      return dispatch(populateNews({ ...res, hits: updatedNewsData }));
-    });
+export const fetchNewsList = pageNum => async dispatch => {
+  const res = await fetch(URL + pageNum).then(response => response.json());
+  saveDataToLocalStorage(res.hits);
+  var updatedNewsData = getDataFromLocalStorage(res.hits);
+  dispatch(populateNews({ ...res, hits: updatedNewsData }));
 };
 
 export const hideNewsItem = newsId => dispatch => {

@@ -15,7 +15,17 @@ module.exports = {
         loader: "babel-loader",
         exclude: "/node_modules/",
         options: {
-          presets: ["@babel/react", "@babel/env"],
+          presets: [
+            "@babel/react",
+            [
+              "@babel/env",
+              {
+                targets: {
+                  esmodules: true,
+                },
+              },
+            ],
+          ],
         },
       },
       {
