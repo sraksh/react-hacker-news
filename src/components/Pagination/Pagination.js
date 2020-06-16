@@ -39,7 +39,7 @@ class Pagination extends React.Component {
           target="_self"
           rel="noopener"
           className={
-            this.props.currentPage.currentPage !== 34
+            this.props.currentPage.currentPage < 33
               ? "btn-next"
               : "btn-disabled-right"
           }

@@ -37,7 +37,12 @@ function generatedHTML(path, store) {
           <div id="root">
               ${content}
               <script src="c-bundle.js"></script>
-          </div>   
+          </div>
+          <p style="text-align:center; font-size:12px">
+            Tribute to
+            <a href="https://twitter.com/itsSSR" target="_blank">@itsSSR</a>
+            <span style="color: #e25555;" >&#9829;</span>
+        <p>
         </body>
       </html>`;
 }
