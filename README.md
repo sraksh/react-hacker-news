@@ -60,6 +60,12 @@ npm test
 - [React Testing library](https://github.com/testing-library/react-testing-library)
 - [Redux-mock-store](https://github.com/reduxjs/redux-mock-store)
 
+## Build and Deployment
+
+- Triggers Auto-Build with [Travis-CI (continuous integration)](https://travis-ci.com/) from master.
+- Auto Deployment to [Heroku](https://hacker-news-clone-sumit.herokuapp.com/) on successful build.
+
+
 ## Pros
 
 - High Accessibility score
