@@ -82,3 +82,7 @@ npm test
 ## License
 
 This project is licensed under the [MIT License](LICENSE)
+
+## Contributing
+
+If there are any ideas or optimizations to improve this template, feel free to submit a pull request including your documented changes.
